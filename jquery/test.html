@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery</title>
+	
+</head>
+<body>
+	<p>Welcome,</p>
+	<p>Fahad</p>
+
+	<div class="container">
+		<div class="row">
+			<table border='1' id="myTable">
+				<tr>
+					<th>Id</th>
+					<th>Product Name</th>
+					<th>Description</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Moto G</td>
+					<td>Moto G next generation smart phone</td>
+					<td><button class="btnSelect">Select</button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Iphone SE</td>
+					<td>Iphone laucnhed new phone bosy of 5s with feature of 6s</td>
+					<td><button class="btnSelect">Select</button></td>
+				</tr>
+
+				<tr>
+					<td>3</td>
+					<td>Sony z3</td>
+					<td>This is waterproof, well designed, etc</td>
+					<td><button class="btnSelect">Select</button></td>
+				</tr>
+
+				<tr>
+					<td>4</td>
+					<td>Moto X Play</td>
+					<td>Another class product from Moto G Family</td>
+					<td><button class="btnSelect">Select</button></td>
+				</tr>
+
+				<tr>
+					<td>5</td>
+					<td>Samsung S7</td>
+					<td>Best smart phone, nice UI etc.</td>
+					<td><button class="btnSelect">Select</button></td>
+				</tr>
+			</table>
+			<br><br>
+			<div class="col-md-6">
+				Input Field:<input type="text" name="data">
+			</div>
+			<style type="text/css">
+				#rook{
+					width: 100%;
+					padding: 50px 0;
+					text-align: center;
+					background: blue;
+					margin-top: 20px;
+				}
+
+					#Took{
+					width: 100%;
+					padding: 50px 0;
+					text-align: center;
+					background: orange;
+					margin-top: 20px;
+				}
+				
+			</style>
+			<div class="col-md-12" id="rook">
+				<h1>For DIV Show And Hide</h1>
+			</div>
+			<button class="btn1">Hide</button>
+			<button class="btn2">Show</button>
+
+			<div class="col-md-12" id="Took">
+				<h1>For DIV Show And Hide One button</h1>
+				<p>Toggle between hide() and show()</p>
+			</div>
+			<button class="btnRoot">Toggle between hide() and show()</button>
+			<br><br>
+
+			<div class="col-md-12">
+				<ol>
+					<li>Lipstick</li>
+					<li>Face Powder</li>
+					<li>Kajol</li>
+					<li>Hire Dry</li>
+				</ol>
+
+				<button id="btn4">Add List</button>
+				<button id="btn5">Remove List</button>
+				
+			</div>
+		
+
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+		/*$(document).ready(function(){
+
+			$("p:eq(1)").html("Munira");
+			$("p:eq(1)").append(" & Fahad");
+
+		});*/
+
+		$(document).ready(function(){
+			var getTable=$('table').html();
+			var getTableCell=$('table').children('tbody').children('tr:eq(4)').children('td:eq(2)').html();
+			console.log(getTableCell);
+			alert(getTableCell);
+
+			$('table').children('tbody').children('tr:eq(3)').children('td:eq(2)').html(getTableCell);
+
+	//row value show input field
+	var getTableCellInput=$('table').children('tbody').children('tr:eq(4)').children('td:eq(2)').html();
+	$('input').val(getTableCellInput);
+
+});
+
+//show and hide div 2button
+$(document).ready(function(){
+	$(".btn1").click(function(){
+		$("#rook").hide();
+	});
+	$(".btn2").click(function(){
+		$("#rook").show();
+	});
+});
+
+
+//one button show hide div
+
+$(document).ready(function(){
+	$(".btnRoot").click(function(){
+		$("#Took").toggle();
+		
+	});
+});
+
+//Add and Remove Data
+
+$(document).ready(function(){
+	$("#btn4").click(function(){
+		$("ol").append("<li>Add Data</li>");
+	});
+	$("#btn5").click(function(){
+		$("ol").remove();
+	});
+});
+
+
+</script>
